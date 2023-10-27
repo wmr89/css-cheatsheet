@@ -1,0 +1,158 @@
+:root {
+    --dark: #33393f;
+    --main: #e866ec;
+    --text: #e0eae4;
+    --accent1: #2aefcb;
+}
+
+::selection {
+    background-color: var(--accent1);
+    color: var(--dark);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacsystemFont, 'Segoe UI', Roboto, Helvetica, 
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-size: 1.75rem;
+    line-height: 1.5;
+    color: var(--text);
+    background-color: var(--dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.625rem;
+    color: var(--main);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: 4rem;
+}
+  
+h2 {
+    font-size: 3.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+code {
+    font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+      'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+      'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+      monospace;
+}
+
+header {
+    width: 96%;
+    margin: 0 auto;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+header h1.page-title {
+    padding: 1rem 1.2rem;
+    font-size: 4.5rem;
+}
+  
+main {
+    width: 96%;
+    margin: 2rem auto;
+}
+
+footer {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    justify-content: center;
+}
+
+.card-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* what is this transition doing */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 4rem;
+}
+
+.code-card {
+    display:flex;
+    flex-direction: column;
+    justify-content:  flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: var(--main);
+    outline: 2px dashed var(--text);
+    outline-offset: -2px;
+    /* What is this transition doing */
+    transition: all 0.5s ease-in-out;
+}
+/* Why do we include both of these */
+.code-card .card-header {
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--dark);
+    color: var(main);
+    border: 2px solid var(--text);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+ /* I don't understand this syntax */
+.code-card:hover, .code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px var(--main), 0 0 15px var(--main);
+ }
+
+.code-card .code-block {
+    flex-grow: 1;
+}
+
+.code-card pre {
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1.2rem 1.2rem;
+    color: var(--text);
+    border-radius: 8px;
+    background-image: linear-gradient(
+    rgba(232, 102, 236, 0.3) 0%,
+    rgba(232, 102, 236, 0.6) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.code-card pre:active {
+    user-select: all;
+}
+
+@media screen and (min-width: 768px) {
+    .card-column {
+        flex: 0 0 50%;
+        max-width: 50%;
+        }
+}
+
+.card-column:last-child {
+    flex-grow:1;
+}
+
+@media screen and (min-width: 768px) {
+    .card-column {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
